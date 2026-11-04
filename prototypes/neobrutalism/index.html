@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neobrutalism - Stride Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="brand-block">
+        <p class="brand-mark" aria-hidden="true">STRIDE</p>
+        <h1>
+          <span class="visually-hidden">neobrutalism - </span>
+          Week performance
+        </h1>
+      </div>
+      <p class="period-chip" id="period-label">This week · Merchandiser view</p>
+    </header>
+
+    <div class="alerts-band" aria-label="Alerts">
+      <p class="alert-chip alert-chip--warn">UNITS −3% / REV +12%</p>
+      <p class="alert-chip">ECOM 58% · RETAIL 42%</p>
+      <p class="alert-chip alert-chip--ember">S/M TIGHTS LOW COVER</p>
+    </div>
+
+    <main id="main" class="dashboard">
+      <section class="metrics" aria-label="Key metrics">
+        <article class="metric-card metric-card--hero">
+          <p class="metric-label">Revenue this week</p>
+          <p class="metric-value" data-metric="revenue">£184,200</p>
+          <p class="metric-delta metric-delta--up" aria-label="Up 12 percent versus last week">
+            <span aria-hidden="true">▲</span> +12% vs £164,464
+          </p>
+          <canvas id="neo-spark" width="240" height="48" aria-hidden="true"></canvas>
+        </article>
+
+        <article class="metric-card">
+          <p class="metric-label">Units sold</p>
+          <p class="metric-value" data-metric="units">9,430</p>
+          <p class="metric-delta metric-delta--down" aria-label="Down 3 percent versus last week">
+            <span aria-hidden="true">▼</span> −3% vs 9,722
+          </p>
+        </article>
+
+        <article class="metric-card">
+          <p class="metric-label">Sell-through</p>
+          <p class="metric-value" data-metric="sellthrough">68%</p>
+          <p class="metric-note">+4 pts vs last week</p>
+        </article>
+
+        <article class="metric-card">
+          <p class="metric-label">Return rate</p>
+          <p class="metric-value" data-metric="returns">4.1%</p>
+          <p class="metric-note">Within target band</p>
+        </article>
+      </section>
+
+      <section class="detail-grid" aria-label="Stock and channel">
+        <article class="panel">
+          <p class="panel-kicker">Inventory health</p>
+          <table class="dense-table">
+            <thead>
+              <tr><th>Signal</th><th>Value</th><th>Flag</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cover weeks</td><td class="mono">3.2</td><td>OK</td></tr>
+              <tr><td>At-risk SKUs</td><td class="mono">7</td><td class="flag-warn">WATCH</td></tr>
+              <tr><td>Overstock u</td><td class="mono">1,180</td><td>TRIM</td></tr>
+              <tr><td>Black / Ember</td><td class="mono">64/36</td><td>MIX</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel">
+          <p class="panel-kicker">Channel split</p>
+          <h2 class="panel-title">Ecom vs retail</h2>
+          <div class="channel-blocks">
+            <div class="channel-block channel-block--ember">
+              <span class="mono">58%</span>
+              <span>Ecom</span>
+            </div>
+            <div class="channel-block">
+              <span class="mono">42%</span>
+              <span>Retail</span>
+            </div>
+          </div>
+          <ul class="size-row" aria-label="Size sell-through">
+            <li>XS 61%</li>
+            <li class="is-hot">S 82%</li>
+            <li class="is-hot">M 79%</li>
+            <li>L 54%</li>
+            <li>XL 41%</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="split" aria-label="Product and region detail">
+        <article class="panel top-product">
+          <p class="panel-kicker">Top product</p>
+          <h2 class="panel-title">Aero Run Tight</h2>
+          <p class="panel-stat">
+            <span class="mono" data-metric="top-units">1,240</span> units
+          </p>
+          <div class="product-bar" role="presentation" aria-hidden="true">
+            <span class="product-bar__fill"></span>
+          </div>
+          <p class="panel-note">Leading SKU this week by unit volume</p>
+        </article>
+
+        <article class="panel regions">
+          <p class="panel-kicker">Regions</p>
+          <h2 class="panel-title">Share of units</h2>
+          <ul class="region-list" id="region-list" aria-label="Regional unit share"></ul>
+          <div
+            class="region-stack"
+            id="region-stack"
+            role="img"
+            aria-label="Regional share: London 32 percent, Manchester 18 percent, Glasgow 11 percent, Other 39 percent"
+          ></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

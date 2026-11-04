@@ -1,0 +1,238 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  --gallery-gap: 1.5rem;
+  --gallery-radius: 0.75rem;
+  --gallery-border: color-mix(in srgb, CanvasText 18%, transparent);
+  --gallery-border-strong: color-mix(in srgb, CanvasText 36%, transparent);
+  --gallery-hover-bg: color-mix(in srgb, CanvasText 5%, Canvas);
+  --gallery-text: CanvasText;
+  --gallery-muted: color-mix(in srgb, CanvasText 68%, Canvas);
+}
+
+body {
+  margin: 0;
+  background: Canvas;
+  color: var(--gallery-text);
+}
+
+main {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: 2.75rem 1.25rem 4rem;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "copy credit"
+    "copy credit";
+  align-items: start;
+  column-gap: 1.5rem;
+  row-gap: 0;
+  margin-bottom: 2.25rem;
+  min-width: 0;
+}
+
+.intro__copy {
+  grid-area: copy;
+  min-width: 0;
+}
+
+.credit {
+  grid-area: credit;
+  margin: 0;
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--gallery-muted);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gallery-muted);
+}
+
+h1 {
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.65rem;
+  font-weight: 700;
+  color: var(--gallery-text);
+}
+
+.lede {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--gallery-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+
+#empty {
+  margin: 0;
+  color: var(--gallery-muted);
+}
+
+ul#list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: var(--gallery-gap);
+  align-items: stretch;
+}
+
+ul#list > li {
+  display: flex;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  gap: 0;
+  padding: 0.9rem;
+  border: 1px solid var(--gallery-border);
+  border-radius: var(--gallery-radius);
+  color: var(--gallery-text);
+  text-decoration: none;
+  background: Canvas;
+  box-shadow: none;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  background: var(--gallery-hover-bg);
+  border-color: var(--gallery-border-strong);
+  color: var(--gallery-text);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--gallery-text);
+  outline-offset: 2px;
+}
+
+.preview-frame {
+  flex: 0 0 auto;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: color-mix(in srgb, CanvasText 8%, Canvas);
+}
+
+.preview {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.preview-fallback {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--gallery-muted);
+  font-size: 0.875rem;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 0.35rem;
+  padding: 0.9rem 0.1rem 0.15rem;
+  min-width: 0;
+}
+
+.meta strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--gallery-text);
+}
+
+.skill-link {
+  display: block;
+  color: var(--gallery-text);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  word-break: break-word;
+  text-underline-offset: 0.15em;
+  opacity: 0.82;
+}
+
+.card:hover .skill-link,
+.card:focus-visible .skill-link,
+.skill-link:hover,
+.skill-link:focus-visible {
+  opacity: 1;
+}
+
+.note {
+  margin: 0.45rem 0 0;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--gallery-border);
+  color: var(--gallery-muted);
+  font-size: 0.825rem;
+  line-height: 1.45;
+  flex: 1 1 auto;
+}
+
+.card:hover .note,
+.card:focus-visible .note {
+  color: var(--gallery-muted);
+  border-top-color: var(--gallery-border-strong);
+}
+
+@media (max-width: 40rem) {
+  main {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "credit"
+      "copy";
+    row-gap: 0.75rem;
+  }
+
+  .credit {
+    justify-self: start;
+    text-align: left;
+    white-space: normal;
+  }
+
+  ul#list {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}

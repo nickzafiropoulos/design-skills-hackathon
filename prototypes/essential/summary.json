@@ -1,0 +1,8 @@
+{
+  "note": "Essential’s single blue accent now marks insights, sparkline, channel bars, and hot size chips across denser stock and comparison cards.",
+  "decisions": [
+    "Neutral light-gray page shell with white 20px-radius cards and soft layered shadows for scannable hierarchy.",
+    "Pill controls for week filters and Export, with blue reserved for the primary action, sparkline, and key emphasis.",
+    "Added comparison insights, inventory table, channel split, and size chips without inventing a second brand accent."
+  ]
+}

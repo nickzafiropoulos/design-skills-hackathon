@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "impeccable": {
+      "source": "bergside/awesome-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/impeccable/SKILL.md",
+      "installMode": "copy"
+    },
+    "neobrutalism": {
+      "source": "bergside/awesome-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/neobrutalism/SKILL.md",
+      "installMode": "copy"
+    },
+    "charm": {
+      "source": "https://www.typeui.sh/design-skills/charm",
+      "sourceType": "public-page",
+      "skillPath": ".agents/skills/charm/SKILL.md",
+      "installMode": "assembled"
+    },
+    "organic": {
+      "source": "https://www.typeui.sh/design-skills/organic",
+      "sourceType": "public-page",
+      "skillPath": ".agents/skills/organic/SKILL.md",
+      "installMode": "assembled"
+    },
+    "essential": {
+      "source": "https://www.typeui.sh/design-skills/essential",
+      "sourceType": "public-page",
+      "skillPath": ".agents/skills/essential/SKILL.md",
+      "installMode": "assembled"
+    },
+    "kinetic": {
+      "source": "https://www.typeui.sh/design-skills/kinetic",
+      "sourceType": "public-page",
+      "skillPath": ".agents/skills/kinetic/SKILL.md",
+      "installMode": "assembled"
+    }
+  }
+}

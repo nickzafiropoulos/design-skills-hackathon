@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>charm - Stride Weekly Performance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,700;1,9..40,500&family=Fragment+Mono:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">Stride</span>
+      </div>
+      <p class="topbar__period">
+        <span class="eyebrow">This week</span>
+        <span class="period-range">27 Oct - 2 Nov</span>
+      </p>
+      <button type="button" class="btn btn--primary" id="export-btn">Export report</button>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <h1 class="visually-hidden">charm - Stride weekly performance</h1>
+
+    <section class="hero-band" aria-labelledby="hero-heading">
+      <div class="hero-band__inner">
+        <p class="eyebrow">Merchandising · UK</p>
+        <h2 id="hero-heading" class="display">This week’s performance</h2>
+        <p class="lede" title="A clear read on revenue, sell-through, and where demand is landing - ready for your midweek call.">A clear read on revenue, sell-through, and where demand is landing - ready for your midweek call.</p>
+      </div>
+    </section>
+
+    <div class="content">
+      <section class="alerts" aria-label="Insights">
+        <p class="alert alert--info">
+          <span class="pill">Insight</span>
+          Revenue is up 12% on fewer units - basket value is doing the heavy lifting.
+        </p>
+        <p class="alert alert--soft">
+          <span class="pill">Stock</span>
+          S and M in Aero Run Tight are pacing ahead; consider a midweek replenish.
+        </p>
+      </section>
+
+      <section class="metrics" aria-label="Key metrics">
+        <article class="panel metric">
+          <p class="eyebrow">Revenue this week</p>
+          <p class="metric__value">£184,200</p>
+          <p class="metric__delta metric__delta--up" aria-label="Up 12 percent versus last week">
+            <span class="pill pill--success">+12%</span>
+            <span>vs £164,464 last week</span>
+          </p>
+          <canvas class="mini-spark" id="rev-spark" width="180" height="36" aria-hidden="true"></canvas>
+        </article>
+
+        <article class="panel metric">
+          <p class="eyebrow">Units sold</p>
+          <p class="metric__value">9,430</p>
+          <p class="metric__delta metric__delta--down" aria-label="Down 3 percent versus last week">
+            <span class="pill pill--warning">−3%</span>
+            <span>vs 9,722 last week</span>
+          </p>
+        </article>
+
+        <article class="panel metric">
+          <p class="eyebrow">Sell-through</p>
+          <p class="metric__value">68%</p>
+          <p class="metric__note">+4 pts vs last week</p>
+        </article>
+
+        <article class="panel metric">
+          <p class="eyebrow">Return rate</p>
+          <p class="metric__value">4.1%</p>
+          <p class="metric__note">Within premium target</p>
+        </article>
+      </section>
+
+      <section class="channels" aria-label="Channel and size detail">
+        <article class="panel channel">
+          <p class="eyebrow">Channel split</p>
+          <h3 class="display display--sm">Ecom vs retail</h3>
+          <div class="channel__bars" role="img" aria-label="Ecom 58 percent, Retail 42 percent">
+            <div class="channel__row">
+              <span>Ecom</span>
+              <div class="channel__track"><span style="--w:58%"></span></div>
+              <strong>58%</strong>
+            </div>
+            <div class="channel__row">
+              <span>Retail</span>
+              <div class="channel__track channel__track--soft"><span style="--w:42%"></span></div>
+              <strong>42%</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel sizes">
+          <p class="eyebrow">Aero Run Tight · size sell-through</p>
+          <ul class="size-pills">
+            <li><span>XS</span><strong>61%</strong></li>
+            <li class="is-hot"><span>S</span><strong>82%</strong></li>
+            <li class="is-hot"><span>M</span><strong>79%</strong></li>
+            <li><span>L</span><strong>54%</strong></li>
+            <li><span>XL</span><strong>41%</strong></li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="split" aria-label="Product and regions">
+        <article class="panel highlight">
+          <p class="eyebrow">Top product</p>
+          <h3 class="display display--sm">Aero Run Tight</h3>
+          <p class="highlight__units"><span class="highlight__count">1,240</span> units sold this week</p>
+          <div class="highlight__bar" role="presentation" aria-hidden="true">
+            <span class="highlight__fill"></span>
+          </div>
+          <p class="metric__note">Leading the assortment · Ember 36% / Black 64%</p>
+        </article>
+
+        <article class="panel regions">
+          <div class="regions__header">
+            <p class="eyebrow">Regions</p>
+            <h3 class="display display--sm">Share of sales</h3>
+          </div>
+          <div class="regions__body">
+            <figure class="chart" aria-hidden="true">
+              <canvas id="region-chart" width="220" height="220"></canvas>
+            </figure>
+            <ul class="region-list" aria-label="Regional breakdown">
+              <li>
+                <span class="swatch swatch--london" aria-hidden="true"></span>
+                <span class="region-list__name">London</span>
+                <span class="region-list__value">32%</span>
+              </li>
+              <li>
+                <span class="swatch swatch--manchester" aria-hidden="true"></span>
+                <span class="region-list__name">Manchester</span>
+                <span class="region-list__value">18%</span>
+              </li>
+              <li>
+                <span class="swatch swatch--glasgow" aria-hidden="true"></span>
+                <span class="region-list__name">Glasgow</span>
+                <span class="region-list__value">11%</span>
+              </li>
+              <li>
+                <span class="swatch swatch--other" aria-hidden="true"></span>
+                <span class="region-list__name">Other</span>
+                <span class="region-list__value">39%</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer-band">
+    <div class="footer-band__inner">
+      <p>Stride merchandising · Internal weekly view</p>
+      <p class="footer-band__muted">Figures refresh every Monday at 08:00 GMT</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

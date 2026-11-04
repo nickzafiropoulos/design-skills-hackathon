@@ -1,0 +1,9 @@
+{
+  "name": "design-skills-hackathon",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node scripts/check.js"
+  }
+}

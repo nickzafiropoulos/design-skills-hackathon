@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>essential - Stride Weekly Performance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <h1 class="visually-hidden">essential - Stride weekly performance</h1>
+
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__name">Stride</span>
+        </div>
+        <nav class="filters" aria-label="Week filter">
+          <button type="button" class="pill is-active" aria-pressed="true">This week</button>
+          <button type="button" class="pill" aria-pressed="false">Last week</button>
+        </nav>
+        <button type="button" class="btn-primary" id="export-btn">Export report</button>
+      </div>
+    </header>
+
+    <main id="main" class="page">
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Merchandising · UK</p>
+          <h2 class="title">This week’s performance</h2>
+          <p class="lede" title="Clear view of revenue, sell-through, and regional demand for your midweek call.">Clear view of revenue, sell-through, and regional demand for your midweek call.</p>
+        </div>
+        <p class="period">28 Oct - 3 Nov</p>
+      </section>
+
+      <section class="insights" aria-label="Insights">
+        <article class="card insight">
+          <p class="metric__label">Vs last week</p>
+          <p class="insight__text">Revenue +12% on −3% units - AOV is carrying the week.</p>
+        </article>
+        <article class="card insight">
+          <p class="metric__label">Stock watch</p>
+          <p class="insight__text">S and M Aero Run Tight at 82% / 79% sell-through - replenish before Friday.</p>
+        </article>
+      </section>
+
+      <section class="metrics" aria-label="Key metrics">
+        <article class="card metric">
+          <p class="metric__label">Revenue this week</p>
+          <p class="metric__value">£184,200</p>
+          <p class="metric__delta metric__delta--up"><span class="chip chip--up">+12%</span> vs £164,464</p>
+          <canvas id="ess-spark" width="160" height="36" aria-hidden="true"></canvas>
+        </article>
+        <article class="card metric">
+          <p class="metric__label">Units sold</p>
+          <p class="metric__value">9,430</p>
+          <p class="metric__delta metric__delta--down"><span class="chip chip--down">−3%</span> vs 9,722</p>
+        </article>
+        <article class="card metric">
+          <p class="metric__label">Sell-through</p>
+          <p class="metric__value">68%</p>
+          <p class="metric__note">+4 pts vs last week</p>
+        </article>
+        <article class="card metric">
+          <p class="metric__label">Return rate</p>
+          <p class="metric__value">4.1%</p>
+          <p class="metric__note">Within premium target</p>
+        </article>
+      </section>
+
+      <section class="mid" aria-label="Channel and inventory">
+        <article class="card">
+          <p class="metric__label">Channel split</p>
+          <h3 class="mid__title">Ecom vs retail</h3>
+          <div class="channel-bars">
+            <div class="channel-row">
+              <span>Ecom</span>
+              <div class="channel-track"><i style="--w:58%"></i></div>
+              <strong>58%</strong>
+            </div>
+            <div class="channel-row">
+              <span>Retail</span>
+              <div class="channel-track channel-track--muted"><i style="--w:42%"></i></div>
+              <strong>42%</strong>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <p class="metric__label">Inventory health</p>
+          <h3 class="mid__title">Assortment cover</h3>
+          <table class="mini-table">
+            <tbody>
+              <tr><td>Cover weeks</td><td>3.2</td></tr>
+              <tr><td>At-risk SKUs</td><td>7</td></tr>
+              <tr><td>Overstock units</td><td>1,180</td></tr>
+              <tr><td>Black / Ember</td><td>64% / 36%</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <section class="split" aria-label="Product and regions">
+        <article class="card product">
+          <p class="metric__label">Top product</p>
+          <h3 class="product__name">Aero Run Tight</h3>
+          <p class="product__units"><strong id="top-units">1,240</strong> units sold this week</p>
+          <div class="progress" aria-hidden="true"><span class="progress__fill" id="progress-fill"></span></div>
+          <ul class="size-chips" aria-label="Size sell-through">
+            <li>XS 61%</li>
+            <li class="is-hot">S 82%</li>
+            <li class="is-hot">M 79%</li>
+            <li>L 54%</li>
+            <li>XL 41%</li>
+          </ul>
+        </article>
+
+        <article class="card regions">
+          <p class="metric__label">Regions</p>
+          <h3 class="regions__title">Share of sales</h3>
+          <div class="regions__body">
+            <canvas id="region-chart" width="180" height="180" aria-hidden="true"></canvas>
+            <ul class="region-list" aria-label="Regional breakdown">
+              <li><span class="dot dot--london"></span><span>London</span><strong>32%</strong></li>
+              <li><span class="dot dot--manchester"></span><span>Manchester</span><strong>18%</strong></li>
+              <li><span class="dot dot--glasgow"></span><span>Glasgow</span><strong>11%</strong></li>
+              <li><span class="dot dot--other"></span><span>Other</span><strong>39%</strong></li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

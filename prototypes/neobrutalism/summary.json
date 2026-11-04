@@ -1,0 +1,8 @@
+{
+  "note": "Bold borders and hard shadows now frame an alerts strip, revenue spark with block markers, dense inventory table, channel blocks, and size chips.",
+  "decisions": [
+    "Used 3px black borders and hard offset shadows on every panel for raw high-contrast neobrutalism structure.",
+    "Set Inter for UI and JetBrains Mono for metric numerals / table values at the skill type scale.",
+    "Kept surface #FBFBF9 with flat zero-radius cards and ember accents for alerts, sparks, and hot sizes - no purple."
+  ]
+}

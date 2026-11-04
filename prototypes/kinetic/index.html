@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kinetic - Stride Weekly Performance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1 class="visually-hidden">kinetic - Stride Weekly Performance</h1>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar__brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">STRIDE</span>
+        <span class="brand-sep" aria-hidden="true">/</span>
+        <span class="brand-context">MERCH OPS</span>
+      </div>
+      <div class="topbar__meta">
+        <span class="meta-chip">WK 44</span>
+        <span class="meta-range">28 OCT - 03 NOV 2025</span>
+        <span class="meta-live"><span class="live-dot" aria-hidden="true"></span> LIVE</span>
+      </div>
+    </header>
+
+    <section class="alerts" aria-label="Ops alerts">
+      <p class="alert"><span class="alert__key">AOV</span> REV +12% / UNITS −3%</p>
+      <p class="alert"><span class="alert__key">CH</span> ECOM 58 · RETAIL 42</p>
+      <p class="alert alert--hot"><span class="alert__key">SKU</span> ART-RUN S/M COVER LOW</p>
+    </section>
+
+    <main class="dashboard">
+      <section class="panel panel--hero" aria-labelledby="rev-label">
+        <div class="panel__head">
+          <h2 id="rev-label" class="panel__label">REVENUE // THIS WEEK</h2>
+          <span class="delta delta--up">+12% VS LW · £164,464</span>
+        </div>
+        <p class="metric-hero">£184,200</p>
+        <div class="spark-wrap">
+          <canvas id="revenue-spark" width="640" height="72" aria-hidden="true"></canvas>
+          <div class="spark-axis">
+            <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-row" aria-label="Secondary metrics">
+        <article class="panel panel--metric">
+          <h2 class="panel__label">UNITS SOLD</h2>
+          <p class="metric-lg">9,430</p>
+          <span class="delta delta--down">−3% VS 9,722</span>
+        </article>
+        <article class="panel panel--metric">
+          <h2 class="panel__label">SELL-THROUGH</h2>
+          <p class="metric-lg">68%</p>
+          <div class="bar-track" aria-hidden="true">
+            <div class="bar-fill" style="--pct: 68%"></div>
+          </div>
+        </article>
+        <article class="panel panel--metric">
+          <h2 class="panel__label">RETURN RATE</h2>
+          <p class="metric-lg">4.1%</p>
+          <span class="status-ok">WITHIN BAND</span>
+        </article>
+        <article class="panel panel--metric">
+          <h2 class="panel__label">CHANNEL</h2>
+          <p class="metric-lg metric-lg--sm">58<span>/</span>42</p>
+          <span class="status-ok">ECOM / RETAIL</span>
+        </article>
+      </section>
+
+      <section class="ops-row" aria-label="Inventory and size">
+        <article class="panel">
+          <h2 class="panel__label">INVENTORY HEALTH</h2>
+          <table class="ops-table">
+            <tbody>
+              <tr><td>COVER WK</td><td>3.2</td><td class="ok">OK</td></tr>
+              <tr><td>AT-RISK SKU</td><td>7</td><td class="warn">WATCH</td></tr>
+              <tr><td>OVERSTOCK U</td><td>1,180</td><td>TRIM</td></tr>
+              <tr><td>BLK / EMB</td><td>64/36</td><td>MIX</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article class="panel">
+          <h2 class="panel__label">SIZE SELL-THROUGH // AERO RUN</h2>
+          <div class="size-grid" aria-label="Size sell-through">
+            <div><span>XS</span><strong>61%</strong></div>
+            <div class="is-hot"><span>S</span><strong>82%</strong></div>
+            <div class="is-hot"><span>M</span><strong>79%</strong></div>
+            <div><span>L</span><strong>54%</strong></div>
+            <div><span>XL</span><strong>41%</strong></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="split-row">
+        <article class="panel panel--product">
+          <h2 class="panel__label">TOP PRODUCT</h2>
+          <p class="product-name">Aero Run Tight</p>
+          <div class="product-stats">
+            <div>
+              <span class="micro-label">UNITS</span>
+              <span class="product-units">1,240</span>
+            </div>
+            <div>
+              <span class="micro-label">SHARE OF WEEK</span>
+              <span class="product-share">13.1%</span>
+            </div>
+          </div>
+          <div class="sku-tag">SKU · ART-RUN-TGT-01</div>
+        </article>
+
+        <article class="panel panel--regions">
+          <h2 class="panel__label">REGION MIX</h2>
+          <ul class="region-list">
+            <li class="region-item">
+              <div class="region-meta">
+                <span class="region-name">London</span>
+                <span class="region-pct">32%</span>
+              </div>
+              <div class="region-bar"><span style="--pct: 32%"></span></div>
+            </li>
+            <li class="region-item">
+              <div class="region-meta">
+                <span class="region-name">Manchester</span>
+                <span class="region-pct">18%</span>
+              </div>
+              <div class="region-bar"><span style="--pct: 18%"></span></div>
+            </li>
+            <li class="region-item">
+              <div class="region-meta">
+                <span class="region-name">Glasgow</span>
+                <span class="region-pct">11%</span>
+              </div>
+              <div class="region-bar"><span style="--pct: 11%"></span></div>
+            </li>
+            <li class="region-item">
+              <div class="region-meta">
+                <span class="region-name">Other</span>
+                <span class="region-pct">39%</span>
+              </div>
+              <div class="region-bar"><span style="--pct: 39%"></span></div>
+            </li>
+          </ul>
+          <div class="region-stack" id="region-stack" aria-hidden="true"></div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="statusline">
+      <span>STRIDE · MERCHANDISING FEED</span>
+      <span class="statusline__sep"></span>
+      <span>REFRESH 00:00 UTC</span>
+      <span class="statusline__sep"></span>
+      <span>SOURCE · POS + ECOM</span>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

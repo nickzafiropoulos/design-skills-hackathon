@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>organic - Stride Weekly Performance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 class="visually-hidden">organic - Stride weekly performance</h1>
+
+    <header class="hero">
+      <div class="container hero__inner">
+        <div class="hero__brand">
+          <p class="hero__mark">Stride</p>
+          <p class="hero__eyebrow">Merchandising · This week</p>
+        </div>
+        <div class="hero__copy">
+          <h2 class="hero__title">Weekly performance</h2>
+          <p class="hero__lede" title="A calm read of sell-through, returns, and where demand landed - so you can plan the floor with confidence.">
+            A calm read of sell-through, returns, and where demand landed - so you can plan the floor with confidence.
+          </p>
+        </div>
+        <div class="hero__meta">
+          <p class="hero__period" id="week-label">Mon 28 Oct - Sun 3 Nov</p>
+          <button type="button" class="btn-amber" id="export-btn">
+            Export summary
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <section class="insight-strip" aria-label="Weekly insights">
+          <article class="insight">
+            <p class="insight__label">Compared with last week</p>
+            <p class="insight__body">Revenue +12% on −3% units - fewer pieces, stronger baskets.</p>
+          </article>
+          <article class="insight">
+            <p class="insight__label">Inventory note</p>
+            <p class="insight__body">3.2 weeks of cover overall; S/M Aero Run Tight need a calm replenish.</p>
+          </article>
+        </section>
+
+        <section class="metrics" aria-label="Key metrics">
+          <article class="panel metric">
+            <p class="metric__label">Revenue this week</p>
+            <p class="metric__value">£184,200</p>
+            <p class="metric__delta metric__delta--up" aria-label="Up 12 percent versus last week">
+              +12% vs last week
+            </p>
+            <canvas id="organic-spark" class="metric__spark" width="200" height="40" aria-hidden="true"></canvas>
+          </article>
+
+          <article class="panel metric">
+            <p class="metric__label">Units sold</p>
+            <p class="metric__value">9,430</p>
+            <p class="metric__delta metric__delta--down" aria-label="Down 3 percent versus last week">
+              −3% vs last week
+            </p>
+          </article>
+
+          <article class="panel metric">
+            <p class="metric__label">Sell-through</p>
+            <p class="metric__value">68%</p>
+            <p class="metric__note">Of available inventory</p>
+          </article>
+
+          <article class="panel metric">
+            <p class="metric__label">Return rate</p>
+            <p class="metric__value">4.1%</p>
+            <p class="metric__note">Within brand target</p>
+          </article>
+        </section>
+
+        <section class="trio" aria-label="Channels, colour, and stock">
+          <article class="panel">
+            <h3 class="panel-title">Channel mix</h3>
+            <p class="panel-lede">Share of this week’s units</p>
+            <div class="channel-stack" role="img" aria-label="Ecom 58 percent, Retail 42 percent">
+              <span class="channel-stack__ecom" style="width:58%">Ecom 58%</span>
+              <span class="channel-stack__retail" style="width:42%">Retail 42%</span>
+            </div>
+          </article>
+          <article class="panel">
+            <h3 class="panel-title">Colour sell-through</h3>
+            <p class="panel-lede">Aero Run Tight</p>
+            <ul class="colour-list">
+              <li><span class="swatch swatch--ink"></span>Black <strong>64%</strong></li>
+              <li><span class="swatch swatch--amber"></span>Ember <strong>36%</strong></li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3 class="panel-title">Stock health</h3>
+            <p class="panel-lede">Assortment cover</p>
+            <dl class="stock-dl">
+              <div><dt>Cover weeks</dt><dd>3.2</dd></div>
+              <div><dt>At-risk sizes</dt><dd>S, M</dd></div>
+              <div><dt>Overstock</dt><dd>1,180 u</dd></div>
+            </dl>
+          </article>
+        </section>
+
+        <section class="split" aria-label="Product and regional detail">
+          <article class="panel feature-island">
+            <p class="feature-island__label">Top product</p>
+            <h3 class="feature-island__title">Aero Run Tight</h3>
+            <p class="feature-island__stat">
+              <span class="feature-island__units">1,240</span> units this week
+            </p>
+            <p class="feature-island__note">
+              Leading the week across running and training floors. Size S at 82% sell-through.
+            </p>
+          </article>
+
+          <article class="panel regions">
+            <div class="regions__header">
+              <h3 class="regions__title">Sales by region</h3>
+              <p class="regions__lede">Share of units sold this week</p>
+            </div>
+            <div class="regions__chart" id="regions-chart" role="img" aria-labelledby="regions-caption"></div>
+            <p id="regions-caption" class="visually-hidden">
+              London 32 percent, Manchester 18 percent, Glasgow 11 percent, Other 39 percent.
+            </p>
+            <ul class="legend" id="regions-legend" aria-label="Region legend"></ul>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+      Summary ready - calm numbers, clear next steps.
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

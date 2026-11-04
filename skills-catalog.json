@@ -1,0 +1,52 @@
+{
+  "skills": [
+    {
+      "id": "impeccable",
+      "name": "Impeccable",
+      "url": "https://www.typeui.sh/design-skills/impeccable",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "prototypePath": "prototypes/impeccable/",
+      "source": "registry"
+    },
+    {
+      "id": "charm",
+      "name": "Charm",
+      "url": "https://www.typeui.sh/design-skills/charm",
+      "skillPath": ".agents/skills/charm/SKILL.md",
+      "prototypePath": "prototypes/charm/",
+      "source": "public-page"
+    },
+    {
+      "id": "organic",
+      "name": "Organic",
+      "url": "https://www.typeui.sh/design-skills/organic",
+      "skillPath": ".agents/skills/organic/SKILL.md",
+      "prototypePath": "prototypes/organic/",
+      "source": "public-page"
+    },
+    {
+      "id": "neobrutalism",
+      "name": "Neobrutalism",
+      "url": "https://www.typeui.sh/design-skills/neobrutalism",
+      "skillPath": ".agents/skills/neobrutalism/SKILL.md",
+      "prototypePath": "prototypes/neobrutalism/",
+      "source": "registry"
+    },
+    {
+      "id": "essential",
+      "name": "Essential",
+      "url": "https://www.typeui.sh/design-skills/essential",
+      "skillPath": ".agents/skills/essential/SKILL.md",
+      "prototypePath": "prototypes/essential/",
+      "source": "public-page"
+    },
+    {
+      "id": "kinetic",
+      "name": "Kinetic",
+      "url": "https://www.typeui.sh/design-skills/kinetic",
+      "skillPath": ".agents/skills/kinetic/SKILL.md",
+      "prototypePath": "prototypes/kinetic/",
+      "source": "public-page"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>impeccable - Stride Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1 class="visually-hidden">impeccable - Stride this week</h1>
+
+  <header class="masthead">
+    <div class="masthead__brand">
+      <span class="masthead__mark" aria-hidden="true"></span>
+      <span class="masthead__name">STRIDE</span>
+    </div>
+    <p class="masthead__context">Merchandising · This week</p>
+    <time class="masthead__period" datetime="2026-11-04">04-10 Nov</time>
+  </header>
+
+  <aside class="band band--ink insights" aria-label="Insights">
+    <p class="insights__item"><span class="insights__tag">ALERT</span> Units −3% while revenue +12% - AOV holding the week.</p>
+    <p class="insights__item"><span class="insights__tag">STOCK</span> S/M Aero Run Tight at 82% sell-through; replenish before Fri.</p>
+    <p class="insights__item"><span class="insights__tag">MIX</span> Ecom 58% / Retail 42% - online outpacing floor.</p>
+  </aside>
+
+  <main class="dashboard">
+    <section class="band band--cream hero-metric" aria-labelledby="revenue-label">
+      <div class="hero-metric__copy">
+        <p class="eyebrow" id="revenue-label">Revenue this week</p>
+        <p class="hero-metric__value"><span class="currency">£</span>184,200</p>
+        <p class="delta delta--up">
+          <span class="delta__arrow" aria-hidden="true">▲</span>
+          <span>+12%</span>
+          <span class="delta__vs">vs last week · £164,464</span>
+        </p>
+      </div>
+      <figure class="hero-trend" aria-label="Revenue trend this week">
+        <figcaption class="eyebrow">Daily revenue</figcaption>
+        <canvas id="revenue-area" width="520" height="120" aria-hidden="true"></canvas>
+        <div class="hero-trend__axis" aria-hidden="true">
+          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+        </div>
+      </figure>
+    </section>
+
+    <section class="band band--ember kpi-strip" aria-label="Key performance indicators">
+      <article class="kpi">
+        <h2 class="kpi__label">Units sold</h2>
+        <p class="kpi__value">9,430</p>
+        <p class="delta delta--down delta--on-ember">
+          <span class="delta__arrow" aria-hidden="true">▼</span>
+          <span>−3%</span>
+          <span class="delta__vs">vs 9,722</span>
+        </p>
+      </article>
+      <article class="kpi">
+        <h2 class="kpi__label">Sell-through</h2>
+        <p class="kpi__value">68%</p>
+        <p class="kpi__note">+4 pts vs LW</p>
+      </article>
+      <article class="kpi">
+        <h2 class="kpi__label">Return rate</h2>
+        <p class="kpi__value">4.1%</p>
+        <p class="kpi__note">Target ≤ 5%</p>
+      </article>
+      <article class="kpi">
+        <h2 class="kpi__label">Channel split</h2>
+        <p class="kpi__value kpi__value--sm">58<span>/</span>42</p>
+        <p class="kpi__note">Ecom / Retail</p>
+      </article>
+    </section>
+
+    <section class="band band--cream grid-lower" aria-label="Product, stock, and regions">
+      <article class="top-product" aria-labelledby="top-product-label">
+        <p class="eyebrow" id="top-product-label">Top product</p>
+        <h2 class="top-product__name">Aero Run Tight</h2>
+        <p class="top-product__units">
+          <span class="top-product__count" id="top-units">0</span>
+          <span class="top-product__unit-label">units</span>
+        </p>
+        <dl class="size-grid" aria-label="Size sell-through">
+          <div><dt>XS</dt><dd>61%</dd></div>
+          <div><dt>S</dt><dd>82%</dd></div>
+          <div><dt>M</dt><dd>79%</dd></div>
+          <div><dt>L</dt><dd>54%</dd></div>
+          <div><dt>XL</dt><dd>41%</dd></div>
+        </dl>
+        <div class="poster-rule" aria-hidden="true"></div>
+      </article>
+
+      <article class="stock" aria-labelledby="stock-label">
+        <h2 class="eyebrow" id="stock-label">Inventory health</h2>
+        <ul class="stock-list">
+          <li><span>Cover weeks</span><strong>3.2</strong></li>
+          <li><span>At risk SKUs</span><strong class="warn">7</strong></li>
+          <li><span>Overstock units</span><strong>1,180</strong></li>
+          <li><span>Black / Ember mix</span><strong>64 / 36</strong></li>
+        </ul>
+      </article>
+
+      <article class="regions" aria-labelledby="regions-label">
+        <h2 class="eyebrow" id="regions-label">Regions</h2>
+        <ul class="region-list" id="region-list"></ul>
+        <div class="region-bars" id="region-bars" role="img" aria-label="Regional share: London 32%, Manchester 18%, Glasgow 11%, Other 39%"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <span>Stride · Weekly performance</span>
+    <span class="colophon__mono">IMPECCABLE</span>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
