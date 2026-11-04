@@ -5,7 +5,7 @@
     "skillUrl": "https://www.typeui.sh/design-skills/charm",
     "href": "/prototypes/charm/index.html",
     "preview": "/prototypes/charm/preview.png",
-    "note": "Kept Charm’s cream bands and coral pills while adding insight alerts, a revenue sparkline, channel split, and size sell-through pills."
+    "note": "Second pass kept Charm cream bands and coral restraint while layering a product table, daily area chart, and mixed bar/chip breakdowns for denser merch fidelity."
   },
   {
     "id": "essential",
@@ -13,7 +13,7 @@
     "skillUrl": "https://www.typeui.sh/design-skills/essential",
     "href": "/prototypes/essential/index.html",
     "preview": "/prototypes/essential/preview.png",
-    "note": "Essential’s single blue accent now marks insights, sparkline, channel bars, and hot size chips across denser stock and comparison cards."
+    "note": "Second pass densifies merchandising detail with a blue area chart, product table, and status pills while keeping one vivid accent on a neutral light-gray shell."
   },
   {
     "id": "impeccable",
@@ -21,7 +21,7 @@
     "skillUrl": "https://www.typeui.sh/design-skills/impeccable",
     "href": "/prototypes/impeccable/index.html",
     "preview": "/prototypes/impeccable/preview.png",
-    "note": "Poster bands now carry an amber insights strip, revenue area chart, channel KPI, size sell-through, and inventory block without leaving the cream/ember rhythm."
+    "note": "Second pass deepens the cream/ember poster bands with a six-KPI ember strip, canvas daily area chart, product table, and Aero size/colour blocks without breaking the graphic rhythm."
   },
   {
     "id": "kinetic",
@@ -29,7 +29,7 @@
     "skillUrl": "https://www.typeui.sh/design-skills/kinetic",
     "href": "/prototypes/kinetic/index.html",
     "preview": "/prototypes/kinetic/preview.png",
-    "note": "Ops console density now includes an alerts strip, channel KPI, inventory table, and size sell-through grid on the same flat lifted surfaces."
+    "note": "Second pass packs AOV/conversion/basket telemetry beside the revenue sparkline and adds a top-5 table plus size/colour/returns strips without leaving the flat lifted mono surface language."
   },
   {
     "id": "neobrutalism",
@@ -37,7 +37,7 @@
     "skillUrl": "https://www.typeui.sh/design-skills/neobrutalism",
     "href": "/prototypes/neobrutalism/index.html",
     "preview": "/prototypes/neobrutalism/preview.png",
-    "note": "Bold borders and hard shadows now frame an alerts strip, revenue spark with block markers, dense inventory table, channel blocks, and size chips."
+    "note": "Second pass packs denser merch tables and chips behind thicker 4px borders and 8px hard shadows, keeping raw contrast instead of soft SaaS chrome."
   },
   {
     "id": "organic",
@@ -45,6 +45,6 @@
     "skillUrl": "https://www.typeui.sh/design-skills/organic",
     "href": "/prototypes/organic/index.html",
     "preview": "/prototypes/organic/preview.png",
-    "note": "Deep-teal hero still opens the page; paper panels now add comparison insights, a revenue area spark, channel mix, colour sell-through, and stock health."
+    "note": "Second pass keeps the deep-teal hero and paper panels while adding a labeled daily revenue area chart, product table, and assortment detail without bordered SaaS clutter."
   }
 ]

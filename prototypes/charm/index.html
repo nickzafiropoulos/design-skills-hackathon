@@ -33,19 +33,27 @@
       <div class="hero-band__inner">
         <p class="eyebrow">Merchandising · UK</p>
         <h2 id="hero-heading" class="display">This week’s performance</h2>
-        <p class="lede" title="A clear read on revenue, sell-through, and where demand is landing - ready for your midweek call.">A clear read on revenue, sell-through, and where demand is landing - ready for your midweek call.</p>
+        <p class="lede">Revenue up on stronger baskets - sell-through and channel mix for your midweek call.</p>
       </div>
     </section>
 
     <div class="content">
-      <section class="alerts" aria-label="Insights">
+      <section class="alerts" aria-label="Insights and inventory">
         <p class="alert alert--info">
           <span class="pill">Insight</span>
-          Revenue is up 12% on fewer units - basket value is doing the heavy lifting.
+          Revenue is up 12% on fewer units - AOV and conversion are carrying the week.
+        </p>
+        <p class="alert alert--warn">
+          <span class="pill pill--warning">Cover low</span>
+          S / M Aero Run Tight pacing hot - replenish before weekend peak.
         </p>
         <p class="alert alert--soft">
-          <span class="pill">Stock</span>
-          S and M in Aero Run Tight are pacing ahead; consider a midweek replenish.
+          <span class="pill">Overstock</span>
+          Pulse Hoodie XL sitting heavy - review promo or size curve.
+        </p>
+        <p class="alert alert--soft">
+          <span class="pill">Restock</span>
+          Metro Track Jacket ETA Thu - watch open-to-buy into weekend.
         </p>
       </section>
 
@@ -55,9 +63,8 @@
           <p class="metric__value">£184,200</p>
           <p class="metric__delta metric__delta--up" aria-label="Up 12 percent versus last week">
             <span class="pill pill--success">+12%</span>
-            <span>vs £164,464 last week</span>
+            <span>vs £164,464 LW</span>
           </p>
-          <canvas class="mini-spark" id="rev-spark" width="180" height="36" aria-hidden="true"></canvas>
         </article>
 
         <article class="panel metric">
@@ -65,62 +72,249 @@
           <p class="metric__value">9,430</p>
           <p class="metric__delta metric__delta--down" aria-label="Down 3 percent versus last week">
             <span class="pill pill--warning">−3%</span>
-            <span>vs 9,722 last week</span>
+            <span>vs 9,722 LW</span>
           </p>
         </article>
 
         <article class="panel metric">
           <p class="eyebrow">Sell-through</p>
           <p class="metric__value">68%</p>
-          <p class="metric__note">+4 pts vs last week</p>
+          <p class="metric__note">+4 pts vs LW</p>
         </article>
 
         <article class="panel metric">
           <p class="eyebrow">Return rate</p>
           <p class="metric__value">4.1%</p>
-          <p class="metric__note">Within premium target</p>
+          <p class="metric__note">Target ≤5%</p>
+        </article>
+
+        <article class="panel metric">
+          <p class="eyebrow">AOV</p>
+          <p class="metric__value">£19.53</p>
+          <p class="metric__delta metric__delta--up" aria-label="Up 15 percent versus last week">
+            <span class="pill pill--success">+15%</span>
+            <span>vs LW</span>
+          </p>
+        </article>
+
+        <article class="panel metric">
+          <p class="eyebrow">Conversion</p>
+          <p class="metric__value">3.2%</p>
+          <p class="metric__note">+0.4 pts vs LW</p>
+        </article>
+
+        <article class="panel metric">
+          <p class="eyebrow">Avg basket</p>
+          <p class="metric__value">2.1</p>
+          <p class="metric__note">units per order</p>
+        </article>
+
+        <article class="panel metric">
+          <p class="eyebrow">Sessions</p>
+          <p class="metric__value">294k</p>
+          <p class="metric__delta metric__delta--up" aria-label="Up 8 percent versus last week">
+            <span class="pill pill--success">+8%</span>
+            <span>Bounce 41%</span>
+          </p>
         </article>
       </section>
 
-      <section class="channels" aria-label="Channel and size detail">
+      <section class="panel revenue-week" aria-labelledby="daily-rev-heading">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Daily revenue</p>
+            <h3 id="daily-rev-heading" class="display display--sm">Week trajectory</h3>
+          </div>
+          <p class="section-head__meta">Peak Fri £31.2k · Softest Sun £21.2k</p>
+        </div>
+        <div class="revenue-week__chart">
+          <canvas id="daily-revenue" width="980" height="200" role="img" aria-label="Daily revenue Monday through Sunday: 22.1, 24.8, 26.4, 28.9, 31.2, 29.6, 21.2 thousand pounds"></canvas>
+        </div>
+        <ul class="day-axis" aria-hidden="true">
+          <li>Mon<br /><strong>£22.1k</strong></li>
+          <li>Tue<br /><strong>£24.8k</strong></li>
+          <li>Wed<br /><strong>£26.4k</strong></li>
+          <li>Thu<br /><strong>£28.9k</strong></li>
+          <li>Fri<br /><strong>£31.2k</strong></li>
+          <li>Sat<br /><strong>£29.6k</strong></li>
+          <li>Sun<br /><strong>£21.2k</strong></li>
+        </ul>
+      </section>
+
+      <section class="trio" aria-label="Channel, category, and returns">
         <article class="panel channel">
-          <p class="eyebrow">Channel split</p>
+          <p class="eyebrow">Channel</p>
           <h3 class="display display--sm">Ecom vs retail</h3>
-          <div class="channel__bars" role="img" aria-label="Ecom 58 percent, Retail 42 percent">
+          <div class="channel__bars" role="img" aria-label="Ecom 58 percent £106.8k, Retail 42 percent £77.4k">
             <div class="channel__row">
               <span>Ecom</span>
               <div class="channel__track"><span style="--w:58%"></span></div>
-              <strong>58%</strong>
+              <strong class="channel__pct">58%</strong>
+              <span class="channel__amt">£106.8k</span>
             </div>
             <div class="channel__row">
               <span>Retail</span>
               <div class="channel__track channel__track--soft"><span style="--w:42%"></span></div>
-              <strong>42%</strong>
+              <strong class="channel__pct">42%</strong>
+              <span class="channel__amt">£77.4k</span>
             </div>
           </div>
         </article>
 
-        <article class="panel sizes">
-          <p class="eyebrow">Aero Run Tight · size sell-through</p>
-          <ul class="size-pills">
-            <li><span>XS</span><strong>61%</strong></li>
-            <li class="is-hot"><span>S</span><strong>82%</strong></li>
-            <li class="is-hot"><span>M</span><strong>79%</strong></li>
-            <li><span>L</span><strong>54%</strong></li>
-            <li><span>XL</span><strong>41%</strong></li>
+        <article class="panel categories">
+          <p class="eyebrow">Category mix</p>
+          <h3 class="display display--sm">Share of sales</h3>
+          <ul class="cat-bars" role="list">
+            <li>
+              <div class="cat-bars__label"><span>Running</span><strong>41%</strong></div>
+              <div class="cat-bars__track"><span style="--w:41%"></span></div>
+            </li>
+            <li>
+              <div class="cat-bars__label"><span>Training</span><strong>28%</strong></div>
+              <div class="cat-bars__track"><span style="--w:28%"></span></div>
+            </li>
+            <li>
+              <div class="cat-bars__label"><span>Lifestyle</span><strong>19%</strong></div>
+              <div class="cat-bars__track"><span style="--w:19%"></span></div>
+            </li>
+            <li>
+              <div class="cat-bars__label"><span>Accessories</span><strong>12%</strong></div>
+              <div class="cat-bars__track cat-bars__track--soft"><span style="--w:12%"></span></div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="panel returns">
+          <p class="eyebrow">Returns breakdown</p>
+          <h3 class="display display--sm">Why they came back</h3>
+          <ul class="chip-stack" aria-label="Return reasons">
+            <li>
+              <span class="chip-stack__name">Fit</span>
+              <span class="chip-stack__bar" style="--w:48%"></span>
+              <strong>48%</strong>
+            </li>
+            <li>
+              <span class="chip-stack__name">Quality</span>
+              <span class="chip-stack__bar" style="--w:22%"></span>
+              <strong>22%</strong>
+            </li>
+            <li>
+              <span class="chip-stack__name">Changed mind</span>
+              <span class="chip-stack__bar" style="--w:18%"></span>
+              <strong>18%</strong>
+            </li>
+            <li>
+              <span class="chip-stack__name">Other</span>
+              <span class="chip-stack__bar chip-stack__bar--soft" style="--w:12%"></span>
+              <strong>12%</strong>
+            </li>
           </ul>
         </article>
       </section>
 
-      <section class="split" aria-label="Product and regions">
-        <article class="panel highlight">
+      <section class="panel products" aria-labelledby="products-heading">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Assortment</p>
+            <h3 id="products-heading" class="display display--sm">Top 5 products</h3>
+          </div>
+          <p class="section-head__meta">Units · revenue · sell-through</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product</th>
+                <th scope="col">Units</th>
+                <th scope="col">Revenue</th>
+                <th scope="col">ST</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <span class="product-name">Aero Run Tight</span>
+                  <span class="product-tag pill">Top</span>
+                </td>
+                <td>1,240</td>
+                <td>£48.2k</td>
+                <td><span class="pill pill--success">82%</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><span class="product-name">Pulse Hoodie</span></td>
+                <td>890</td>
+                <td>£35.6k</td>
+                <td><span class="pill">71%</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><span class="product-name">Metro Track Jacket</span></td>
+                <td>720</td>
+                <td>£28.8k</td>
+                <td><span class="pill">64%</span></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><span class="product-name">Flex Training Short</span></td>
+                <td>680</td>
+                <td>£17.0k</td>
+                <td><span class="pill pill--success">75%</span></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><span class="product-name">Stride Crew Sock 3pk</span></td>
+                <td>1,100</td>
+                <td>£11.0k</td>
+                <td><span class="pill pill--success">88%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="split" aria-label="Aero detail and regions">
+        <article class="panel aero-detail">
           <p class="eyebrow">Top product</p>
           <h3 class="display display--sm">Aero Run Tight</h3>
           <p class="highlight__units"><span class="highlight__count">1,240</span> units sold this week</p>
-          <div class="highlight__bar" role="presentation" aria-hidden="true">
-            <span class="highlight__fill"></span>
+
+          <div class="aero-block">
+            <p class="eyebrow">Size curve</p>
+            <ul class="size-pills" aria-label="Aero Run Tight size curve">
+              <li><span>XS</span><strong>8%</strong></li>
+              <li class="is-hot"><span>S</span><strong>28%</strong></li>
+              <li class="is-hot"><span>M</span><strong>34%</strong></li>
+              <li><span>L</span><strong>22%</strong></li>
+              <li><span>XL</span><strong>8%</strong></li>
+            </ul>
           </div>
-          <p class="metric__note">Leading the assortment · Ember 36% / Black 64%</p>
+
+          <div class="aero-block">
+            <p class="eyebrow">Colour sell-through</p>
+            <ul class="colour-list">
+              <li>
+                <span class="colour-dot colour-dot--black" aria-hidden="true"></span>
+                <span>Black</span>
+                <div class="colour-track"><span style="--w:78%"></span></div>
+                <strong>78%</strong>
+              </li>
+              <li>
+                <span class="colour-dot colour-dot--ember" aria-hidden="true"></span>
+                <span>Ember</span>
+                <div class="colour-track"><span style="--w:71%"></span></div>
+                <strong>71%</strong>
+              </li>
+              <li>
+                <span class="colour-dot colour-dot--bone" aria-hidden="true"></span>
+                <span>Bone</span>
+                <div class="colour-track colour-track--soft"><span style="--w:54%"></span></div>
+                <strong>54%</strong>
+              </li>
+            </ul>
+          </div>
         </article>
 
         <article class="panel regions">

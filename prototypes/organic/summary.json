@@ -1,8 +1,8 @@
 {
-  "note": "Deep-teal hero still opens the page; paper panels now add comparison insights, a revenue area spark, channel mix, colour sell-through, and stock health.",
+  "note": "Second pass keeps the deep-teal hero and paper panels while adding a labeled daily revenue area chart, product table, and assortment detail without bordered SaaS clutter.",
   "decisions": [
-    "Deep-teal hero with light type and 80px bottom radius as the signature composition opener",
-    "Borderless white metric panels on paper-gray with Georgia serif values, not bordered SaaS cards",
-    "Pale amber reserved for Export and retail channel accent; teal carries charts, insights, and ecom emphasis"
+    "Deep-teal hero with light type and 80px bottom radius opens the composition, then paper-gray settles into borderless white merchandising panels",
+    "Georgia serif for display metrics and panel titles; Inter for body, controls, and chart labels at medium sentence case",
+    "Pale amber reserved for Export, retail channel, and the Friday peak marker; teal carries primary charts, sell-through pills, and ecom emphasis"
   ]
 }

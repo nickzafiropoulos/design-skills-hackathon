@@ -23,7 +23,7 @@
 
   <aside class="band band--ink insights" aria-label="Insights">
     <p class="insights__item"><span class="insights__tag">ALERT</span> Units −3% while revenue +12% - AOV holding the week.</p>
-    <p class="insights__item"><span class="insights__tag">STOCK</span> S/M Aero Run Tight at 82% sell-through; replenish before Fri.</p>
+    <p class="insights__item"><span class="insights__tag">STOCK</span> S/M Aero Run Tight COVER LOW - replenish before Fri.</p>
     <p class="insights__item"><span class="insights__tag">MIX</span> Ecom 58% / Retail 42% - online outpacing floor.</p>
   </aside>
 
@@ -38,11 +38,17 @@
           <span class="delta__vs">vs last week · £164,464</span>
         </p>
       </div>
-      <figure class="hero-trend" aria-label="Revenue trend this week">
-        <figcaption class="eyebrow">Daily revenue</figcaption>
-        <canvas id="revenue-area" width="520" height="120" aria-hidden="true"></canvas>
+      <figure class="hero-trend" aria-label="Daily revenue this week">
+        <div class="hero-trend__head">
+          <figcaption class="eyebrow">Daily revenue</figcaption>
+          <p class="hero-trend__peak">Peak Fri £31.2k</p>
+        </div>
+        <canvas id="revenue-area" width="520" height="148" aria-hidden="true"></canvas>
         <div class="hero-trend__axis" aria-hidden="true">
           <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+        </div>
+        <div class="hero-trend__values" aria-hidden="true">
+          <span>£22.1k</span><span>£24.8k</span><span>£26.4k</span><span>£28.9k</span><span>£31.2k</span><span>£29.6k</span><span>£21.2k</span>
         </div>
       </figure>
     </section>
@@ -65,45 +71,183 @@
       <article class="kpi">
         <h2 class="kpi__label">Return rate</h2>
         <p class="kpi__value">4.1%</p>
-        <p class="kpi__note">Target ≤ 5%</p>
+        <p class="kpi__note">Target ≤5%</p>
       </article>
       <article class="kpi">
-        <h2 class="kpi__label">Channel split</h2>
-        <p class="kpi__value kpi__value--sm">58<span>/</span>42</p>
-        <p class="kpi__note">Ecom / Retail</p>
+        <h2 class="kpi__label">AOV</h2>
+        <p class="kpi__value">£19.53</p>
+        <p class="delta delta--up delta--on-ember">
+          <span class="delta__arrow" aria-hidden="true">▲</span>
+          <span>+15%</span>
+          <span class="delta__vs">vs LW</span>
+        </p>
+      </article>
+      <article class="kpi">
+        <h2 class="kpi__label">Conversion</h2>
+        <p class="kpi__value">3.2%</p>
+        <p class="kpi__note">+0.4 pts</p>
+      </article>
+      <article class="kpi">
+        <h2 class="kpi__label">Avg basket</h2>
+        <p class="kpi__value">2.1</p>
+        <p class="kpi__note">Units</p>
       </article>
     </section>
 
-    <section class="band band--cream grid-lower" aria-label="Product, stock, and regions">
-      <article class="top-product" aria-labelledby="top-product-label">
-        <p class="eyebrow" id="top-product-label">Top product</p>
-        <h2 class="top-product__name">Aero Run Tight</h2>
-        <p class="top-product__units">
-          <span class="top-product__count" id="top-units">0</span>
-          <span class="top-product__unit-label">units</span>
-        </p>
-        <dl class="size-grid" aria-label="Size sell-through">
-          <div><dt>XS</dt><dd>61%</dd></div>
-          <div><dt>S</dt><dd>82%</dd></div>
-          <div><dt>M</dt><dd>79%</dd></div>
-          <div><dt>L</dt><dd>54%</dd></div>
-          <div><dt>XL</dt><dd>41%</dd></div>
+    <section class="band band--cream channel-band" aria-label="Channel, category, and traffic">
+      <article class="channel" aria-labelledby="channel-label">
+        <h2 class="eyebrow" id="channel-label">Channel</h2>
+        <div class="channel__dual">
+          <div class="channel__side">
+            <p class="channel__name">Ecom</p>
+            <p class="channel__pct">58%</p>
+            <p class="channel__rev">£106.8k</p>
+          </div>
+          <div class="channel__side channel__side--retail">
+            <p class="channel__name">Retail</p>
+            <p class="channel__pct">42%</p>
+            <p class="channel__rev">£77.4k</p>
+          </div>
+        </div>
+        <div class="split-bar" role="img" aria-label="Ecom 58 percent, Retail 42 percent">
+          <span class="split-bar__ecom" style="width:58%"></span>
+          <span class="split-bar__retail" style="width:42%"></span>
+        </div>
+      </article>
+
+      <article class="category" aria-labelledby="category-label">
+        <h2 class="eyebrow" id="category-label">Category mix</h2>
+        <ul class="category-list" id="category-list"></ul>
+      </article>
+
+      <article class="traffic" aria-labelledby="traffic-label">
+        <h2 class="eyebrow" id="traffic-label">Traffic</h2>
+        <dl class="traffic-stats">
+          <div>
+            <dt>Sessions</dt>
+            <dd>
+              <span class="traffic-stats__value">294k</span>
+              <span class="delta delta--up delta--sm">
+                <span class="delta__arrow" aria-hidden="true">▲</span>
+                <span>+8%</span>
+              </span>
+            </dd>
+          </div>
+          <div>
+            <dt>Bounce</dt>
+            <dd><span class="traffic-stats__value">41%</span></dd>
+          </div>
         </dl>
         <div class="poster-rule" aria-hidden="true"></div>
       </article>
+    </section>
 
-      <article class="stock" aria-labelledby="stock-label">
-        <h2 class="eyebrow" id="stock-label">Inventory health</h2>
-        <ul class="stock-list">
-          <li><span>Cover weeks</span><strong>3.2</strong></li>
-          <li><span>At risk SKUs</span><strong class="warn">7</strong></li>
-          <li><span>Overstock units</span><strong>1,180</strong></li>
-          <li><span>Black / Ember mix</span><strong>64 / 36</strong></li>
+    <section class="band band--ember products-band" aria-labelledby="products-label">
+      <div class="products-band__head">
+        <h2 class="eyebrow eyebrow--on-ember" id="products-label">Top 5 products</h2>
+        <p class="products-band__lead">Leader: Aero Run Tight · 1,240 units</p>
+      </div>
+      <div class="table-wrap">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product</th>
+              <th scope="col">Units</th>
+              <th scope="col">Revenue</th>
+              <th scope="col">ST</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Aero Run Tight</td>
+              <td>1,240</td>
+              <td>£48.2k</td>
+              <td>82%</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Pulse Hoodie</td>
+              <td>890</td>
+              <td>£35.6k</td>
+              <td>71%</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Metro Track Jacket</td>
+              <td>720</td>
+              <td>£28.8k</td>
+              <td>64%</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Flex Training Short</td>
+              <td>680</td>
+              <td>£17.0k</td>
+              <td>75%</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Stride Crew Sock 3pk</td>
+              <td>1,100</td>
+              <td>£11.0k</td>
+              <td>88%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="band band--cream aero-band" aria-label="Aero Run Tight deep dive">
+      <article class="aero-hero" aria-labelledby="aero-label">
+        <p class="eyebrow" id="aero-label">Top product focus</p>
+        <h2 class="aero-hero__name">Aero Run Tight</h2>
+        <p class="aero-hero__units">
+          <span class="aero-hero__count" id="top-units">0</span>
+          <span class="aero-hero__unit-label">units</span>
+          <span class="aero-hero__rev">£48.2k · 82% ST</span>
+        </p>
+      </article>
+
+      <article class="size-curve" aria-labelledby="size-label">
+        <h2 class="eyebrow" id="size-label">Size curve</h2>
+        <ul class="size-chips" id="size-chips"></ul>
+        <div class="size-stack" id="size-stack" role="img" aria-label="Size curve: XS 8%, S 28%, M 34%, L 22%, XL 8%"></div>
+      </article>
+
+      <article class="colour-st" aria-labelledby="colour-label">
+        <h2 class="eyebrow" id="colour-label">Colour sell-through</h2>
+        <ul class="colour-list" id="colour-list"></ul>
+      </article>
+    </section>
+
+    <section class="band band--ink lower-ink" aria-label="Inventory, returns, and regions">
+      <article class="alerts" aria-labelledby="alerts-label">
+        <h2 class="eyebrow eyebrow--on-ink" id="alerts-label">Inventory alerts</h2>
+        <ul class="alert-list">
+          <li>
+            <span class="alert-list__tag alert-list__tag--low">COVER LOW</span>
+            <span>S/M Aero Run Tight</span>
+          </li>
+          <li>
+            <span class="alert-list__tag alert-list__tag--over">OVERSTOCK</span>
+            <span>Pulse Hoodie XL</span>
+          </li>
+          <li>
+            <span class="alert-list__tag alert-list__tag--eta">ETA THU</span>
+            <span>Metro Track Jacket restock</span>
+          </li>
         </ul>
       </article>
 
+      <article class="returns" aria-labelledby="returns-label">
+        <h2 class="eyebrow eyebrow--on-ink" id="returns-label">Returns breakdown</h2>
+        <ul class="returns-list" id="returns-list"></ul>
+      </article>
+
       <article class="regions" aria-labelledby="regions-label">
-        <h2 class="eyebrow" id="regions-label">Regions</h2>
+        <h2 class="eyebrow eyebrow--on-ink" id="regions-label">Regions</h2>
         <ul class="region-list" id="region-list"></ul>
         <div class="region-bars" id="region-bars" role="img" aria-label="Regional share: London 32%, Manchester 18%, Glasgow 11%, Other 39%"></div>
       </article>

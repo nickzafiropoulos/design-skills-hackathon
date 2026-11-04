@@ -6,6 +6,16 @@
     { label: "Other", value: 39, color: "#D6D3D1" },
   ];
 
+  const dailyRevenue = [
+    { day: "Mon", value: 22.1 },
+    { day: "Tue", value: 24.8 },
+    { day: "Wed", value: 26.4 },
+    { day: "Thu", value: 28.9 },
+    { day: "Fri", value: 31.2 },
+    { day: "Sat", value: 29.6 },
+    { day: "Sun", value: 21.2 },
+  ];
+
   function drawRegionChart() {
     const canvas = document.getElementById("region-chart");
     if (!canvas || !canvas.getContext) return;
@@ -53,38 +63,93 @@
     ctx.fillText("regions", cx, cy + 14);
   }
 
-  function drawSpark() {
-    const canvas = document.getElementById("rev-spark");
+  function drawDailyRevenue() {
+    const canvas = document.getElementById("daily-revenue");
     if (!canvas || !canvas.getContext) return;
-    const values = [21, 24, 22, 29, 27, 33, 31];
+
     const ctx = canvas.getContext("2d");
     const dpr = window.devicePixelRatio || 1;
-    const w = 180;
-    const h = 36;
+    const parent = canvas.parentElement;
+    const w = Math.max(parent ? parent.clientWidth : 980, 320);
+    const h = 200;
+    const padX = 8;
+    const padTop = 16;
+    const padBottom = 12;
+
     canvas.width = w * dpr;
     canvas.height = h * dpr;
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
 
-    const max = Math.max(...values);
-    const min = Math.min(...values) - 2;
-    const step = (w - 4) / (values.length - 1);
+    const values = dailyRevenue.map((d) => d.value);
+    const max = Math.max(...values) * 1.08;
+    const min = Math.min(...values) * 0.82;
+    const chartW = w - padX * 2;
+    const chartH = h - padTop - padBottom;
+    const step = chartW / (values.length - 1);
+
     const points = values.map((v, i) => ({
-      x: 2 + i * step,
-      y: h - 4 - ((v - min) / (max - min)) * (h - 8),
+      x: padX + i * step,
+      y: padTop + chartH - ((v - min) / (max - min)) * chartH,
     }));
 
-    ctx.beginPath();
-    points.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
-    ctx.strokeStyle = "#E4544B";
-    ctx.lineWidth = 2;
-    ctx.lineJoin = "round";
-    ctx.stroke();
-  }
+    // Soft horizontal guides
+    ctx.strokeStyle = "#E7E6E5";
+    ctx.lineWidth = 1;
+    for (let g = 0; g < 3; g++) {
+      const y = padTop + (chartH / 2) * g;
+      ctx.beginPath();
+      ctx.moveTo(padX, y);
+      ctx.lineTo(w - padX, y);
+      ctx.stroke();
+    }
 
-  function animateHighlight() {
-    const fill = document.querySelector(".highlight__fill");
-    if (!fill) return;
-    requestAnimationFrame(() => fill.classList.add("is-ready"));
+    // Area fill
+    const grad = ctx.createLinearGradient(0, padTop, 0, h);
+    grad.addColorStop(0, "rgba(228, 84, 75, 0.28)");
+    grad.addColorStop(0.55, "rgba(228, 84, 75, 0.1)");
+    grad.addColorStop(1, "rgba(228, 84, 75, 0)");
+
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, h - padBottom);
+    points.forEach((p) => ctx.lineTo(p.x, p.y));
+    ctx.lineTo(points[points.length - 1].x, h - padBottom);
+    ctx.closePath();
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Smooth stroke
+    ctx.beginPath();
+    points.forEach((p, i) => {
+      if (i === 0) {
+        ctx.moveTo(p.x, p.y);
+        return;
+      }
+      const prev = points[i - 1];
+      const cx1 = prev.x + step * 0.4;
+      const cx2 = p.x - step * 0.4;
+      ctx.bezierCurveTo(cx1, prev.y, cx2, p.y, p.x, p.y);
+    });
+    ctx.strokeStyle = "#E4544B";
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+    ctx.stroke();
+
+    // Peak marker (Friday)
+    const peakIdx = values.indexOf(Math.max(...values));
+    const peak = points[peakIdx];
+    ctx.beginPath();
+    ctx.arc(peak.x, peak.y, 5, 0, Math.PI * 2);
+    ctx.fillStyle = "#E4544B";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(peak.x, peak.y, 5, 0, Math.PI * 2);
+    ctx.strokeStyle = "#FBFAF9";
+    ctx.lineWidth = 2;
+    ctx.stroke();
   }
 
   function wireExport() {
@@ -100,8 +165,12 @@
     });
   }
 
-  drawRegionChart();
-  drawSpark();
-  animateHighlight();
-  wireExport();
+  function init() {
+    drawRegionChart();
+    drawDailyRevenue();
+    wireExport();
+  }
+
+  init();
+  window.addEventListener("resize", drawDailyRevenue);
 })();

@@ -1,8 +1,8 @@
 {
-  "note": "Ops console density now includes an alerts strip, channel KPI, inventory table, and size sell-through grid on the same flat lifted surfaces.",
+  "note": "Second pass packs AOV/conversion/basket telemetry beside the revenue sparkline and adds a top-5 table plus size/colour/returns strips without leaving the flat lifted mono surface language.",
   "decisions": [
-    "All UI type is JetBrains Mono for dense, operational hierarchy.",
-    "Panels lift via a lighter surface derivative on one warm-off-white base - no borders or drop shadows.",
-    "Kinetic yellow marks brand/action (alerts, hot sizes, +12% delta, SKU tag); navy carries structure and emphasis."
+    "JetBrains Mono remains the sole UI voice for dense operational hierarchy across tables, axes, and alert chips.",
+    "Panels stay borderless and shadow-free - lift comes only from a lighter surface derivative on one uniform base.",
+    "Kinetic yellow is reserved for brand/action moments (hot sizes, peak spark point, +deltas, lead SKU marker); navy carries structure and data emphasis."
   ]
 }

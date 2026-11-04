@@ -1,8 +1,8 @@
 {
-  "note": "Essential’s single blue accent now marks insights, sparkline, channel bars, and hot size chips across denser stock and comparison cards.",
+  "note": "Second pass densifies merchandising detail with a blue area chart, product table, and status pills while keeping one vivid accent on a neutral light-gray shell.",
   "decisions": [
-    "Neutral light-gray page shell with white 20px-radius cards and soft layered shadows for scannable hierarchy.",
-    "Pill controls for week filters and Export, with blue reserved for the primary action, sparkline, and key emphasis.",
-    "Added comparison insights, inventory table, channel split, and size chips without inventing a second brand accent."
+    "Neutral light-gray page with white 20px-radius cards and soft layered shadows for scannable hierarchy across denser merchandising panels.",
+    "Single vivid blue reserved for CTAs, focus, area-chart stroke/fill, hot sell-through pills, and insight emphasis - no second brand accent.",
+    "Pill controls for week filters, Export, size curve, and status tags keep interactive affordances tactile and obvious on the dense dashboard."
   ]
 }

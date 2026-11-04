@@ -8,6 +8,9 @@
     { name: "Other", pct: 39, slug: "other", ember: false },
   ];
 
+  /* Daily revenue £k: Mon-Sun */
+  var dailyRevenue = [22.1, 24.8, 26.4, 28.9, 31.2, 29.6, 21.2];
+
   function buildRegions() {
     var list = document.getElementById("region-list");
     var stack = document.getElementById("region-stack");
@@ -56,9 +59,6 @@
 
   function animateIn() {
     requestAnimationFrame(function () {
-      var productFill = document.querySelector(".product-bar__fill");
-      if (productFill) productFill.classList.add("is-on");
-
       document.querySelectorAll(".region-track__fill").forEach(function (el) {
         el.classList.add("is-on");
       });
@@ -72,45 +72,63 @@
   function drawSpark() {
     var canvas = document.getElementById("neo-spark");
     if (!canvas || !canvas.getContext) return;
-    var values = [20, 24, 22, 28, 26, 33, 30];
+
+    var values = dailyRevenue;
     var ctx = canvas.getContext("2d");
     var dpr = window.devicePixelRatio || 1;
-    var w = 240;
-    var h = 48;
+    var w = 320;
+    var h = 72;
     canvas.width = w * dpr;
     canvas.height = h * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
 
     var max = Math.max.apply(null, values);
-    var min = Math.min.apply(null, values) - 2;
-    var step = (w - 8) / (values.length - 1);
+    var min = Math.min.apply(null, values) - 1;
+    var padX = 10;
+    var padY = 10;
+    var step = (w - padX * 2) / (values.length - 1);
     var points = values.map(function (v, i) {
       return {
-        x: 4 + i * step,
-        y: h - 6 - ((v - min) / (max - min)) * (h - 14),
+        x: padX + i * step,
+        y: h - padY - ((v - min) / (max - min)) * (h - padY * 2),
+        v: v,
       };
     });
 
+    /* baseline */
+    ctx.beginPath();
+    ctx.moveTo(padX, h - padY);
+    ctx.lineTo(w - padX, h - padY);
+    ctx.strokeStyle = "rgba(251, 251, 249, 0.25)";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    /* polyline */
     ctx.beginPath();
     points.forEach(function (p, i) {
       if (i === 0) ctx.moveTo(p.x, p.y);
       else ctx.lineTo(p.x, p.y);
     });
-    ctx.strokeStyle = "#E85D04";
-    ctx.lineWidth = 3;
+    ctx.strokeStyle = "#FDC800";
+    ctx.lineWidth = 4;
+    ctx.lineJoin = "miter";
     ctx.stroke();
 
+    /* block markers - hard neobrutalist squares */
     points.forEach(function (p) {
-      ctx.fillStyle = "#FBFBF9";
-      ctx.fillRect(p.x - 3, p.y - 3, 6, 6);
+      var size = 8;
+      ctx.fillStyle = "#E85D04";
+      ctx.fillRect(p.x - size / 2, p.y - size / 2, size, size);
       ctx.strokeStyle = "#0A0A0A";
       ctx.lineWidth = 2;
-      ctx.strokeRect(p.x - 3, p.y - 3, 6, 6);
+      ctx.strokeRect(p.x - size / 2, p.y - size / 2, size, size);
     });
   }
 
   buildRegions();
   drawSpark();
   animateIn();
-})();
 
+  window.addEventListener("resize", drawSpark);
+})();

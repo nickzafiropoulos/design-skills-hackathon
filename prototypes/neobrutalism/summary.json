@@ -1,8 +1,8 @@
 {
-  "note": "Bold borders and hard shadows now frame an alerts strip, revenue spark with block markers, dense inventory table, channel blocks, and size chips.",
+  "note": "Second pass packs denser merch tables and chips behind thicker 4px borders and 8px hard shadows, keeping raw contrast instead of soft SaaS chrome.",
   "decisions": [
-    "Used 3px black borders and hard offset shadows on every panel for raw high-contrast neobrutalism structure.",
-    "Set Inter for UI and JetBrains Mono for metric numerals / table values at the skill type scale.",
-    "Kept surface #FBFBF9 with flat zero-radius cards and ember accents for alerts, sparks, and hot sizes - no purple."
+    "Raised border to 4px and hard offset shadow to 8px on panels, chips, and tables for raw high-contrast neobrutalism structure.",
+    "Mapped skill tokens Inter + JetBrains Mono at 13/15/17/21/27/35, with mono numerals in the Top 5 table, spark labels, and metric values.",
+    "Used surface #FBFBF9 with primary #FDC800 period/top-row accents and ember hot chips - flat zero-radius, no purple secondary."
   ]
 }

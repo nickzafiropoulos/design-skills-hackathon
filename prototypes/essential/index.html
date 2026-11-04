@@ -32,7 +32,7 @@
         <div>
           <p class="eyebrow">Merchandising · UK</p>
           <h2 class="title">This week’s performance</h2>
-          <p class="lede" title="Clear view of revenue, sell-through, and regional demand for your midweek call.">Clear view of revenue, sell-through, and regional demand for your midweek call.</p>
+          <p class="lede">Revenue, sell-through, and demand signals for the midweek call.</p>
         </div>
         <p class="period">28 Oct - 3 Nov</p>
       </section>
@@ -44,7 +44,7 @@
         </article>
         <article class="card insight">
           <p class="metric__label">Stock watch</p>
-          <p class="insight__text">S and M Aero Run Tight at 82% / 79% sell-through - replenish before Friday.</p>
+          <p class="insight__text">S/M Aero Run Tight cover low - replenish before Friday.</p>
         </article>
       </section>
 
@@ -53,7 +53,6 @@
           <p class="metric__label">Revenue this week</p>
           <p class="metric__value">£184,200</p>
           <p class="metric__delta metric__delta--up"><span class="chip chip--up">+12%</span> vs £164,464</p>
-          <canvas id="ess-spark" width="160" height="36" aria-hidden="true"></canvas>
         </article>
         <article class="card metric">
           <p class="metric__label">Units sold</p>
@@ -63,16 +62,61 @@
         <article class="card metric">
           <p class="metric__label">Sell-through</p>
           <p class="metric__value">68%</p>
-          <p class="metric__note">+4 pts vs last week</p>
+          <p class="metric__note"><span class="chip chip--up">+4 pts</span> vs last week</p>
         </article>
         <article class="card metric">
           <p class="metric__label">Return rate</p>
           <p class="metric__value">4.1%</p>
-          <p class="metric__note">Within premium target</p>
+          <p class="metric__note">Target ≤5%</p>
         </article>
       </section>
 
-      <section class="mid" aria-label="Channel and inventory">
+      <section class="metrics metrics--secondary" aria-label="Commerce metrics">
+        <article class="card metric">
+          <p class="metric__label">AOV</p>
+          <p class="metric__value metric__value--sm">£19.53</p>
+          <p class="metric__delta metric__delta--up"><span class="chip chip--up">+15%</span> vs LW</p>
+        </article>
+        <article class="card metric">
+          <p class="metric__label">Conversion</p>
+          <p class="metric__value metric__value--sm">3.2%</p>
+          <p class="metric__delta metric__delta--up"><span class="chip chip--up">+0.4 pts</span></p>
+        </article>
+        <article class="card metric">
+          <p class="metric__label">Avg basket</p>
+          <p class="metric__value metric__value--sm">2.1</p>
+          <p class="metric__note">units per order</p>
+        </article>
+        <article class="card metric">
+          <p class="metric__label">Sessions</p>
+          <p class="metric__value metric__value--sm">294k</p>
+          <p class="metric__delta metric__delta--up"><span class="chip chip--up">+8%</span> Bounce 41%</p>
+        </article>
+      </section>
+
+      <section class="chart-panel" aria-label="Daily revenue">
+        <article class="card chart-card">
+          <div class="chart-card__head">
+            <div>
+              <p class="metric__label">Daily revenue</p>
+              <h3 class="mid__title">Mon - Sun (£k)</h3>
+            </div>
+            <p class="chart-card__peak">Peak Fri £31.2k</p>
+          </div>
+          <canvas id="daily-revenue" width="1040" height="200" role="img" aria-label="Daily revenue area chart: Mon 22.1k, Tue 24.8k, Wed 26.4k, Thu 28.9k, Fri 31.2k, Sat 29.6k, Sun 21.2k"></canvas>
+          <ul class="day-legend" aria-hidden="true">
+            <li>Mon<br />£22.1k</li>
+            <li>Tue<br />£24.8k</li>
+            <li>Wed<br />£26.4k</li>
+            <li>Thu<br />£28.9k</li>
+            <li class="is-peak">Fri<br />£31.2k</li>
+            <li>Sat<br />£29.6k</li>
+            <li>Sun<br />£21.2k</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="mid" aria-label="Channel and category">
         <article class="card">
           <p class="metric__label">Channel split</p>
           <h3 class="mid__title">Ecom vs retail</h3>
@@ -81,40 +125,139 @@
               <span>Ecom</span>
               <div class="channel-track"><i style="--w:58%"></i></div>
               <strong>58%</strong>
+              <span class="channel-amt">£106.8k</span>
             </div>
             <div class="channel-row">
               <span>Retail</span>
               <div class="channel-track channel-track--muted"><i style="--w:42%"></i></div>
               <strong>42%</strong>
+              <span class="channel-amt">£77.4k</span>
             </div>
           </div>
         </article>
         <article class="card">
-          <p class="metric__label">Inventory health</p>
-          <h3 class="mid__title">Assortment cover</h3>
-          <table class="mini-table">
-            <tbody>
-              <tr><td>Cover weeks</td><td>3.2</td></tr>
-              <tr><td>At-risk SKUs</td><td>7</td></tr>
-              <tr><td>Overstock units</td><td>1,180</td></tr>
-              <tr><td>Black / Ember</td><td>64% / 36%</td></tr>
-            </tbody>
-          </table>
+          <p class="metric__label">Category mix</p>
+          <h3 class="mid__title">Share of units</h3>
+          <ul class="mix-list" aria-label="Category mix">
+            <li>
+              <span>Running</span>
+              <div class="mix-track"><i style="--w:41%"></i></div>
+              <strong>41%</strong>
+            </li>
+            <li>
+              <span>Training</span>
+              <div class="mix-track mix-track--2"><i style="--w:28%"></i></div>
+              <strong>28%</strong>
+            </li>
+            <li>
+              <span>Lifestyle</span>
+              <div class="mix-track mix-track--3"><i style="--w:19%"></i></div>
+              <strong>19%</strong>
+            </li>
+            <li>
+              <span>Accessories</span>
+              <div class="mix-track mix-track--4"><i style="--w:12%"></i></div>
+              <strong>12%</strong>
+            </li>
+          </ul>
         </article>
       </section>
 
-      <section class="split" aria-label="Product and regions">
+      <section class="table-panel" aria-label="Top products">
+        <article class="card">
+          <div class="table-head">
+            <div>
+              <p class="metric__label">Bestsellers</p>
+              <h3 class="mid__title">Top 5 products</h3>
+            </div>
+            <p class="table-head__note">Units · Revenue · Sell-through</p>
+          </div>
+          <div class="table-wrap">
+            <table class="product-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Units</th>
+                  <th scope="col">Revenue</th>
+                  <th scope="col">ST</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><strong>Aero Run Tight</strong></td>
+                  <td>1,240</td>
+                  <td>£48.2k</td>
+                  <td><span class="st-pill st-pill--hot">82%</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><strong>Pulse Hoodie</strong></td>
+                  <td>890</td>
+                  <td>£35.6k</td>
+                  <td><span class="st-pill">71%</span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><strong>Metro Track Jacket</strong></td>
+                  <td>720</td>
+                  <td>£28.8k</td>
+                  <td><span class="st-pill">64%</span></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td><strong>Flex Training Short</strong></td>
+                  <td>680</td>
+                  <td>£17.0k</td>
+                  <td><span class="st-pill">75%</span></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><strong>Stride Crew Sock 3pk</strong></td>
+                  <td>1,100</td>
+                  <td>£11.0k</td>
+                  <td><span class="st-pill st-pill--hot">88%</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section class="split" aria-label="Product detail and regions">
         <article class="card product">
-          <p class="metric__label">Top product</p>
+          <p class="metric__label">Top product detail</p>
           <h3 class="product__name">Aero Run Tight</h3>
           <p class="product__units"><strong id="top-units">1,240</strong> units sold this week</p>
           <div class="progress" aria-hidden="true"><span class="progress__fill" id="progress-fill"></span></div>
-          <ul class="size-chips" aria-label="Size sell-through">
-            <li>XS 61%</li>
-            <li class="is-hot">S 82%</li>
-            <li class="is-hot">M 79%</li>
-            <li>L 54%</li>
-            <li>XL 41%</li>
+
+          <p class="sublabel">Size curve</p>
+          <ul class="size-chips" aria-label="Size curve">
+            <li>XS 8%</li>
+            <li class="is-hot">S 28%</li>
+            <li class="is-hot">M 34%</li>
+            <li>L 22%</li>
+            <li>XL 8%</li>
+          </ul>
+
+          <p class="sublabel">Colour sell-through</p>
+          <ul class="colour-list" aria-label="Colour sell-through">
+            <li>
+              <span class="swatch swatch--black" aria-hidden="true"></span>
+              <span>Black</span>
+              <strong>78%</strong>
+            </li>
+            <li>
+              <span class="swatch swatch--ember" aria-hidden="true"></span>
+              <span>Ember</span>
+              <strong>71%</strong>
+            </li>
+            <li>
+              <span class="swatch swatch--bone" aria-hidden="true"></span>
+              <span>Bone</span>
+              <strong>54%</strong>
+            </li>
           </ul>
         </article>
 
@@ -130,6 +273,53 @@
               <li><span class="dot dot--other"></span><span>Other</span><strong>39%</strong></li>
             </ul>
           </div>
+        </article>
+      </section>
+
+      <section class="lower" aria-label="Alerts and returns">
+        <article class="card">
+          <p class="metric__label">Inventory alerts</p>
+          <h3 class="mid__title">Action needed</h3>
+          <ul class="alert-list">
+            <li class="alert alert--warn">
+              <span class="alert__tag">Cover low</span>
+              <span class="alert__text">S/M Aero Run Tight</span>
+            </li>
+            <li class="alert alert--over">
+              <span class="alert__tag">Overstock</span>
+              <span class="alert__text">Pulse Hoodie XL</span>
+            </li>
+            <li class="alert alert--info">
+              <span class="alert__tag">Restock</span>
+              <span class="alert__text">Metro Track Jacket ETA Thu</span>
+            </li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="metric__label">Returns breakdown</p>
+          <h3 class="mid__title">Why shoppers send back</h3>
+          <ul class="return-list" aria-label="Returns reasons">
+            <li>
+              <span>Fit</span>
+              <div class="return-track"><i style="--w:48%"></i></div>
+              <strong>48%</strong>
+            </li>
+            <li>
+              <span>Quality</span>
+              <div class="return-track"><i style="--w:22%"></i></div>
+              <strong>22%</strong>
+            </li>
+            <li>
+              <span>Changed&nbsp;mind</span>
+              <div class="return-track"><i style="--w:18%"></i></div>
+              <strong>18%</strong>
+            </li>
+            <li>
+              <span>Other</span>
+              <div class="return-track"><i style="--w:12%"></i></div>
+              <strong>12%</strong>
+            </li>
+          </ul>
         </article>
       </section>
     </main>
