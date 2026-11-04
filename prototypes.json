@@ -1,0 +1,50 @@
+[
+  {
+    "id": "charm",
+    "name": "Charm",
+    "skillUrl": "https://www.typeui.sh/design-skills/charm",
+    "href": "/prototypes/charm/index.html",
+    "preview": "/prototypes/charm/preview.png",
+    "note": "Kept Charm’s cream bands and coral pills while adding insight alerts, a revenue sparkline, channel split, and size sell-through pills."
+  },
+  {
+    "id": "essential",
+    "name": "Essential",
+    "skillUrl": "https://www.typeui.sh/design-skills/essential",
+    "href": "/prototypes/essential/index.html",
+    "preview": "/prototypes/essential/preview.png",
+    "note": "Essential’s single blue accent now marks insights, sparkline, channel bars, and hot size chips across denser stock and comparison cards."
+  },
+  {
+    "id": "impeccable",
+    "name": "Impeccable",
+    "skillUrl": "https://www.typeui.sh/design-skills/impeccable",
+    "href": "/prototypes/impeccable/index.html",
+    "preview": "/prototypes/impeccable/preview.png",
+    "note": "Poster bands now carry an amber insights strip, revenue area chart, channel KPI, size sell-through, and inventory block without leaving the cream/ember rhythm."
+  },
+  {
+    "id": "kinetic",
+    "name": "Kinetic",
+    "skillUrl": "https://www.typeui.sh/design-skills/kinetic",
+    "href": "/prototypes/kinetic/index.html",
+    "preview": "/prototypes/kinetic/preview.png",
+    "note": "Ops console density now includes an alerts strip, channel KPI, inventory table, and size sell-through grid on the same flat lifted surfaces."
+  },
+  {
+    "id": "neobrutalism",
+    "name": "Neobrutalism",
+    "skillUrl": "https://www.typeui.sh/design-skills/neobrutalism",
+    "href": "/prototypes/neobrutalism/index.html",
+    "preview": "/prototypes/neobrutalism/preview.png",
+    "note": "Bold borders and hard shadows now frame an alerts strip, revenue spark with block markers, dense inventory table, channel blocks, and size chips."
+  },
+  {
+    "id": "organic",
+    "name": "Organic",
+    "skillUrl": "https://www.typeui.sh/design-skills/organic",
+    "href": "/prototypes/organic/index.html",
+    "preview": "/prototypes/organic/preview.png",
+    "note": "Deep-teal hero still opens the page; paper panels now add comparison insights, a revenue area spark, channel mix, colour sell-through, and stock health."
+  }
+]

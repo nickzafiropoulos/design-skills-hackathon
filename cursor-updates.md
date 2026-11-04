@@ -4,3 +4,4 @@
 - Confirmed all six prototypes (impeccable, charm, organic, neobrutalism, essential, kinetic) are on the gallery at localhost:5173 with index.html, styles.css, main.js, summary.json, and preview.png screenshots.
 
 - Updated the landing gallery credit to “An experiment by Nick Zafiropoulos” (top-right), removed em/en dashes from prototype UI copy, and kept short ledes on one line with ellipsis.
+- Made the gallery Vercel-ready by building a static dist/ with prototypes.json instead of relying on the Node /api/prototypes server.

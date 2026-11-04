@@ -1,7 +1,7 @@
 const list = document.querySelector("#list");
 const empty = document.querySelector("#empty");
 
-const response = await fetch("/api/prototypes");
+const response = await fetch("/prototypes.json");
 const prototypes = await response.json();
 
 empty.hidden = prototypes.length > 0;
